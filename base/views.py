@@ -6,6 +6,7 @@ def base(request):
     products = Product.objects.all()
     return render(request, 'base.html', {'products':products})
 
-def dashboard(request):
+def dashboard(request, id):
     users = Seller.objects.all()
-    return render(request, 'dashboard/demo_1/index.html', {'users':users})
+    user_id = Seller.objects.get(id=id)
+    return render(request, 'dashboard/demo_1/index.html', {'users':users, 'user_id':user_id})
