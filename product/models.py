@@ -10,6 +10,7 @@ class Category(models.Model):
 
 class Product(models.Model):
     name = models.CharField(max_length= 20)
+    slug = models.SlugField()
     item_type = models.ForeignKey(Category,related_name="Product", on_delete=models.PROTECT)
     image = models.ImageField(upload_to="product/media")
     price = models.FloatField()

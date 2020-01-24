@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from product.models import Product
+from user.models import Seller
 
 def base(request):
     products = Product.objects.all()
@@ -16,3 +17,7 @@ def add_to_cart(request):
         c.save()
 
     return render(request, 'base.html')
+def dashboard(request):
+    users = Seller.objects.all()
+    user = request.user
+    return render(request, 'dashboard/demo_1/index.html', {'user':user})
