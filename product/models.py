@@ -10,6 +10,7 @@ class Category(models.Model):
 
 class Product(models.Model):
     name = models.CharField(max_length= 20)
+    slug = models.SlugField()
     item_type = models.ForeignKey(Category,related_name="Product", on_delete=models.PROTECT)
     image = models.ImageField(upload_to="product/media")
     price = models.FloatField()
@@ -18,4 +19,15 @@ class Product(models.Model):
 
     def __str__(self):
         return self.name 
+
+    def get_absolute_url(self):
+        return f"/product/{self.slug}"
+
+class Cart(models.Model):
+    product_name = models.CharField(max_length=256)
+    quantity = models.IntegerField()
+    price = models.FloatField()
+
+    def __str__(self):
+        return self.product_name
 
