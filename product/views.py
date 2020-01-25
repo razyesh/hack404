@@ -29,9 +29,8 @@ def product_add(request):
         form = ProductAddForm(request.POST)
         if form.is_valid():
             form.save(user=request.user)
-        return redirect('/product-add', {'message':'Product Sucessfully added'})
+            return redire('/product-add')
 
     else:
         form = ProductAddForm()
-    
     return render(request, 'dashboard/add_product.html', {'form':form})

@@ -12,6 +12,9 @@
               <div class="card-header">
                 <h3 class="card-title">Add Your Product</h3>
               </div>
+              {% if message %}
+                {{message}}
+              {% endif %}
               <!-- /.card-header -->
               <!-- form start -->
               <form role="form" action="{% url 'product:product-add' %}" enctype="multipart/form-data" method="POST">
