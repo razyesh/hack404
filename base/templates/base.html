@@ -26,6 +26,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<link
 		href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic'
 		rel='stylesheet' type='text/css'>
+
+
+		<style>
+			#container {
+				position: relative;
+			}
+			div.overlay {
+				opacity: .9;
+				background-color: black;
+				position: absolute;
+				left: 0; top: 0; height: 256px; width: 256px;
+			}
+			</style>
 	<!-- start-smoth-scrolling -->
 	<script type="text/javascript" src="{% static 'js/move-top.js' %}"></script>
 	<script type="text/javascript" src="{% static 'js/easing.js' %}"></script>
@@ -214,20 +227,24 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<img src="{% static 'images/s1.jpg' %}" alt="" height=100% width=50px />
 			<!--Slider Description example-->
 			<div class="slide-desc">
-				<h3>Buy Rice Products Are Now On Line With Us</h3>
+				<h3>
+					"Women's freedom is the sign of social freedom."</h3>
 			</div>
 		</li>
 		<li>
-			<img src="{% static 'images/s3.jpg' %}" alt="" />
+			<img src="{% static 'images/s3.jpg' %}" alt=""/>
 			<div class="slide-desc">
-				<h3>Whole Spices Products Are Now On Line With Us</h3>
+				<h3>"Women have discovered that they cannot rely on 
+					men's chivalry to give them justice."</h3>
 			</div>
 		</li>
 
 		<li>
-			<img src="{% static 'images/s4.jpg' %}" alt="" />
+			<img src="{% static 'images/s4.jpg' %}" alt=""/>
 			<div class="slide-desc">
-				<h3>Whole Spices Products Are Now On Line With Us</h3>
+				<h3>Women, if the soul of the nation is to be saved, 
+					I believe you must become its soul.
+												Coretta Scott King</h3>
 			</div>
 		</li>
 	</ul>
@@ -332,7 +349,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 														<div class="snipcart-thumb">
 															<a href="products.html"><img title=" " alt=" "
 																	src="{{product.image.url}}" class="img-responsive"/></a>
-															<p>{{product.product_name}}</p>
+															<p>{{product.name}}</p>
 															<div class="stars">
 																<i class="fa fa-star blue-star" aria-hidden="true"></i>
 																<i class="fa fa-star blue-star" aria-hidden="true"></i>
@@ -390,7 +407,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<li data-target="#myCarousel" data-slide-to="1"></li>
 			<li data-target="#myCarousel" data-slide-to="2"></li>
 		</ol>
-
+		<img src="{%static 'images/vn.jpg' %}" class="img-responsive" style="margin-left:120px;"/>
 
 	</div><!-- /.carousel -->
 	<!--banner-bottom-->
@@ -398,19 +415,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="container">
 			<div class="col-md-6 ban-bottom3">
 				<div class="ban-top">
-					<img src="images/p2.jpg" class="img-responsive" alt="" />
+					<img src="{% static 'images/s2.jpg' %}" class="img-responsive" alt="" />
 
 				</div>
 				<div class="ban-img">
 					<div class=" ban-bottom1">
 						<div class="ban-top">
-							<img src="images/p3.jpg" class="img-responsive" alt="" />
-
+							<img src="{% static 'images/s3.jpg' %}" class="img-responsive" alt="" />
+ 
 						</div>
 					</div>
 					<div class="ban-bottom2">
 						<div class="ban-top">
-							<img src="images/p4.jpg" class="img-responsive" alt="" />
+							<img src="{% static 'images/s1.jpg' %}" class="img-responsive" alt="" />
 
 						</div>
 					</div>
@@ -419,7 +436,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</div>
 			<div class="col-md-6 ban-bottom">
 				<div class="ban-top">
-					<img src="images/111.jpg" class="img-responsive" alt="" />
+					<img src="{% static 'images/s4.jpg' %}" class="img-responsive" alt="" />
 
 
 				</div>
