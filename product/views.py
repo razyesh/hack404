@@ -1,6 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Cart
-from .forms import CartForm
+from .forms import CartForm, ProductAddForm
 from product.models import Product, Category
 from django.views.generic.detail import DetailView
 
@@ -22,3 +22,16 @@ class ProductDetailView(DetailView):
         context = super().get_context_data(**kwargs)
         context['products'] = Product.objects.all()
         return context
+
+def product_add(request):
+    print('Worked')
+    if request.method == "POST":
+        form = ProductAddForm(request.POST)
+        if form.is_valid():
+            form.save(user=request.user)
+        return redirect('/product-add', {'message':'Product Sucessfully added'})
+
+    else:
+        form = ProductAddForm()
+    
+    return render(request, 'dashboard/add_product.html', {'form':form})

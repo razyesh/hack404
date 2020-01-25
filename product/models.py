@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User 
 
 # Create your models here.
 class Category(models.Model):
@@ -9,6 +10,7 @@ class Category(models.Model):
 
 
 class Product(models.Model):
+    user = models.ForeignKey(User, related_name="product", on_delete = models.CASCADE)
     name = models.CharField(max_length= 20)
     slug = models.SlugField()
     item_type = models.ForeignKey(Category,related_name="Product", on_delete=models.PROTECT)
@@ -16,6 +18,7 @@ class Product(models.Model):
     price = models.FloatField()
     description = models.TextField(max_length=200)
     is_custom = models.BooleanField(default=False)
+    is_published = models.BooleanField(default=False)
 
     def __str__(self):
         return self.name 
