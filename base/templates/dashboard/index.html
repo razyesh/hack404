@@ -1,4 +1,5 @@
 {% load static %}
+{% load crispy_forms_tags %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -29,9 +30,9 @@
       <!-- partial:partials/_navbar.html -->
       <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
         <div class="text-center navbar-brand-wrapper d-flex align-items-top justify-content-center">
-          <a class="navbar-brand brand-logo" href="dashboard">
+          <a class="navbar-brand brand-logo" href="/">
             <img src="#" alt="logo" /> </a>
-          <a class="navbar-brand brand-logo-mini" href="dashboard">
+          <a class="navbar-brand brand-logo-mini" href="/">
             <img src="#" alt="logo" /> </a>
         </div>
         <div class="navbar-menu-wrapper d-flex align-items-center">
@@ -198,11 +199,19 @@
                 <span class="menu-title">Dashboard</span>
               </a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/seller-add">
+                <i class="menu-icon typcn typcn-document-text"></i>
+                <span class="menu-title">Add Seller</span>
+              </a>
+            </li>
           </ul>
         </nav>
         <!-- partial -->
         <!-- main-panel ends -->
+        {% block content %}
         <h1>Working On!!!</h1>
+        {% endblock %}
       </div>
       <!-- page-body-wrapper ends -->
     </div>

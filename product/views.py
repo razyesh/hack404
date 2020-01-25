@@ -17,4 +17,8 @@ def shop(request):
 class ProductDetailView(DetailView):
     model = Product
     template_name = 'detail.html'
-    
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['products'] = Product.objects.all()
+        return context

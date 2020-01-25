@@ -9,7 +9,7 @@ def base(request):
 def dashboard(request, id):
     users = Seller.objects.all()
     user_id = Seller.objects.get(id=id)
-    return render(request, 'dashboard/demo_1/index.html', {'users':users, 'user_id':user_id})
+    return render(request, 'dashboard/index.html', {'users':users, 'user_id':user_id})
 
 def add_to_cart(request):
     if request.method== "POST":
@@ -25,4 +25,7 @@ def add_to_cart(request):
 def dashboard(request):
     users = Seller.objects.all()
     user = request.user
-    return render(request, 'dashboard/demo_1/index.html', {'user':user})
+    return render(request, 'dashboard/index.html', {'user':user})
+
+def seller_add(request):
+    return render(request, 'dashboard/seller_add_form.html')
